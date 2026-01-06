@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Vision for Robotised Wheelchair | Paul - Robotics Engineer</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Paul</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <div class="project-header">
+            <a href="../index.html#projects" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Projects
+            </a>
+            <h1>3D Vision for a Robotised Wheelchair</h1>
+            <div class="project-meta">
+                <span class="project-tag">Perception</span>
+                <span class="project-tag">ROS</span>
+                <span class="project-tag">Depth Sensing</span>
+                <span class="project-tag">EPFL Biorob</span>
+            </div>
+        </div>
+
+        <!-- Rerun Viewer Integration -->
+        <div class="rerun-container">
+            <div id="rerun-viewer" class="rerun-placeholder">
+                <p>Rerun Viewer Placeholder</p>
+                <code>Replace with your .rrd file URL</code>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    To embed a recording, call:<br>
+                    <code>loadRerunViewer('rerun-viewer', 'YOUR_RRD_URL')</code>
+                </p>
+            </div>
+        </div>
+
+        <div class="project-content">
+            <h2>Overview</h2>
+            <p>
+                This project was part a collaboration between EPFL (Biorob laboratory) and C. Cazali, aiming to
+                develop a robotised wheelchair with an hybrid legged-wheeled locomotion and obstacle crossing capabilities.
+            </p>
+
+            <h2>Problem Statement</h2>
+            <p>
+                From previous students works, a model was implemented in simulation, with obstacle crossing working
+                in a 2D space (xz), with a ground truth knowledge of the obstacles positions and dimensions.
+                My project aimed to extend this to a 3D navigation scenario, using on-board depth imagery for the
+                obstacle perception. I was then to review and select a physical sensor, in view of real world experiments.
+                This represented 14 weeks of full time work.
+            </p>
+
+            <h2>Approach</h2>
+            <p>
+                After extending the obstacle crossing to handle 3D navigation cases, I reviewed the state of the art
+                for obstacle perception, and highlighted the need for a mapping strategy to aggregate the sensor's
+                measures over time. As this is a well researched topic, I looked at the available open sources
+                implementations, and selected the
+                <a href="https://github.com/ANYbotics/elevation_mapping" target="_blank">elevation mapping approach</a>
+                developed by ETH Zürich and Anybotics, which was the more adapted to our use case.
+            </p>
+            <p>
+                I then interfaced the simulated sensory data with the mapping algorithms using
+                <a href="https://www.ros.org/" target="_blank">ROS</a>, creating a 2.5D map of the environment
+                around the robot from the sensory input.
+            </p>
+
+            <figure>
+                <video controls style="max-width: 100%;">
+                    <source src="../assets/videos/demo_lws.mp4" type="video/mp4">
+                </video>
+                <figcaption>Demonstration of obstacle crossing using real-time perception</figcaption>
+            </figure>
+
+            <p>
+                After that, I solved the challenges inherent to our application, handling self-occlusion, low
+                confidence measures and computing the obstacle representation required by the crossing algorithms
+                while minimizing the time lag. This allowed the robot to clear multiple obstacle crossing scenarios,
+                relying solely on real time perception for the obstacle estimation.
+            </p>
+
+            <figure>
+                <img src="../assets/images/lws_stairsrgbd.png" alt="Sensor measure in an outdoor scene">
+                <figcaption>Sensor measure in an outdoor scene</figcaption>
+            </figure>
+
+            <h2>Sensor Selection</h2>
+            <p>
+                Next, I chose the physical sensor after reviewing the available depth sensing technologies in regards
+                to outdoor use, driver availability and budget. After the purchase of a 2nd generation refurbished
+                kinect, with depth sensing based on Time-of-Flight technology and a complimentary RGB image, I adapted
+                existing calibration scripts for <a href="https://opencv.org/opencv-4-0/" target="_blank">OpenCV 4</a>.
+                I then tested the now calibrated sensor on outdoor scenes, and interfaced it with the rest of the project.
+            </p>
+            <p>
+                I then experimented with visual and motor odometry, laying the foundations for future work regarding
+                the localisation of the robot.
+            </p>
+
+            <h2>Results</h2>
+            <p>
+                With this work, I was able to provide a proof of concept on the solutions for obstacle perception
+                with on-board imagery, combining and adapting multiple state of the art approaches to the LWS project.
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Paul. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

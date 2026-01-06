@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Computer Interaction | Paul - Robotics Engineer</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Paul</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <div class="project-header">
+            <a href="../index.html#projects" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Projects
+            </a>
+            <h1>Brain Computer Interaction</h1>
+            <p style="color: var(--color-text-muted); margin-top: 0.5rem;">
+                Decoding of motor termination in imagined movement
+            </p>
+            <div class="project-meta">
+                <span class="project-tag">BCI</span>
+                <span class="project-tag">Signal Processing</span>
+                <span class="project-tag">EEG</span>
+                <span class="project-tag">EPFL</span>
+            </div>
+        </div>
+
+        <!-- Rerun Viewer Integration -->
+        <div class="rerun-container">
+            <div id="rerun-viewer" class="rerun-placeholder">
+                <p>Rerun Viewer Placeholder</p>
+                <code>Replace with your .rrd file URL</code>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    To embed a recording, call:<br>
+                    <code>loadRerunViewer('rerun-viewer', 'YOUR_RRD_URL')</code>
+                </p>
+            </div>
+        </div>
+
+        <div class="project-content">
+            <h2>Overview</h2>
+            <p>
+                This was a course project at the EPFL Brain Computer Interaction (BCI) class at EPFL.
+            </p>
+
+            <h2>Background</h2>
+            <p>
+                Motor Imagery (MI) involves activation of the neural system while a person imagines performing
+                a task or body movement without actually physically performing the movement. As changes in the
+                brain rhythms are observed in the sensory-motor area of brain during planning and execution of
+                movements, we are able to detect the synchronization and desynchronization of these rhythms
+                during and after MI.
+            </p>
+
+            <h2>Project Goals</h2>
+            <p>
+                Under the supervision of a PhD student and in a group of four, we were to acquire EEG data and
+                process it to detect the end of a motor imagery period.
+            </p>
+
+            <figure>
+                <video controls style="max-width: 100%;">
+                    <source src="../assets/videos/demo_bci.mp4" type="video/mp4">
+                </video>
+                <figcaption>Demonstration of the protocol, with online event detection</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Paul. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

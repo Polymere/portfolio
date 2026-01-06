@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-inspired Locomotion Controller | Paul - Robotics Engineer</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Paul</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <div class="project-header">
+            <a href="../index.html#projects" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Projects
+            </a>
+            <h1>Bio-inspired Locomotion Controller</h1>
+            <p style="color: var(--color-text-muted); margin-top: 0.5rem;">
+                Sensitivity analysis on reflex parameters and mimetism based optimisation
+            </p>
+            <div class="project-meta">
+                <span class="project-tag">Optimization</span>
+                <span class="project-tag">Biomechanics</span>
+                <span class="project-tag">NSGA-II</span>
+                <span class="project-tag">EPFL Biorob</span>
+            </div>
+        </div>
+
+        <!-- Rerun Viewer Integration -->
+        <div class="rerun-container">
+            <div id="rerun-viewer" class="rerun-placeholder">
+                <p>Rerun Viewer Placeholder</p>
+                <code>Replace with your .rrd file URL</code>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    To embed a recording, call:<br>
+                    <code>loadRerunViewer('rerun-viewer', 'YOUR_RRD_URL')</code>
+                </p>
+            </div>
+        </div>
+
+        <div class="project-content">
+            <h2>Overview</h2>
+            <p>
+                This project was a student project at the EPFL Biorob lab, aiming to tune a bio-inspired bipedal
+                locomotion <a href="https://pubmed.ncbi.nlm.nih.gov/20378480/" target="_blank">model</a> controlled
+                by muscle reflexes.
+            </p>
+
+            <figure style="float: left; margin-right: 2rem; margin-bottom: 1rem; max-width: 300px;">
+                <img src="../assets/images/geyer-2.png" alt="Geyer reflex model" style="width: 100%;">
+            </figure>
+
+            <h2>Problem Statement</h2>
+            <p>
+                The first goal of this project was to study the impact of each of the 25 model parameters of the
+                gait stability, and then to tune it in order to reproduce pathological gaits. The complexity of
+                this model comes from the interactions between the antagonist and agonist muscles, making it hard
+                to study parameters independently.
+            </p>
+
+            <div style="clear: both;"></div>
+
+            <h2>Approach</h2>
+            <p>
+                In order to evaluate the relations with the model's parameter and the generated gait, I started
+                by doing a sensitivity analysis. This study was made by varying each parameter independently,
+                while the others were set to tuned values. For that matter, I established stability and gait
+                quality metrics, for example the energy/distance ratio. I then optimised the simulation execution
+                and logging, and adapted it so that evaluations could be done in parallel on a cluster.
+            </p>
+            <p>
+                Once these tools were developed, I proposed a formulation of the pathological gait reproduction
+                as a multi-objective optimisation problem. As I had access to clinical measures of
+                <a href="https://orthoinfo.aaos.org/en/diseases--conditions/toe-walking/" target="_blank">idiopathic toe walking</a>
+                gaits, with the joint angles for hip, knee and heel along a full stride, I set the model's
+                parameters as degrees of freedom, with the objective of mimicking the joint angles from the patients.
+            </p>
+            <p>
+                I then performed a literature review on multi-objective optimisation, and wrote my implementation
+                of the NSGA-II algorithm.
+            </p>
+
+            <figure>
+                <video controls style="max-width: 100%;">
+                    <source src="../assets/videos/demo_toewalking.mp4" type="video/mp4">
+                </video>
+                <figcaption>Resulting gait after optimisation</figcaption>
+            </figure>
+
+            <h2>Results</h2>
+            <p>
+                This resulted in a good proof of concept, with the model adopting a "toe walking" like gait after
+                optimisation, with a larger stimulation of the soleus and gastrocnemius muscles than in a normal stride.
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Paul. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

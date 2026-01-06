@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Tooling | Paul - Robotics Engineer</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Paul</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <div class="project-header">
+            <a href="../index.html#projects" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Projects
+            </a>
+            <h1>Developer Tooling</h1>
+            <p style="color: var(--color-text-muted); margin-top: 0.5rem;">
+                Making engineers' life easier
+            </p>
+            <div class="project-meta">
+                <span class="project-tag">Tooling</span>
+                <span class="project-tag">CV Pipeline</span>
+                <span class="project-tag">Concurrency</span>
+                <span class="project-tag">Work Project</span>
+            </div>
+        </div>
+
+        <!-- Rerun Viewer Integration -->
+        <div class="rerun-container">
+            <div id="rerun-viewer" class="rerun-placeholder">
+                <p>Rerun Viewer Placeholder</p>
+                <code>Replace with your .rrd file URL</code>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    To embed a recording, call:<br>
+                    <code>loadRerunViewer('rerun-viewer', 'YOUR_RRD_URL')</code>
+                </p>
+            </div>
+        </div>
+
+        <div class="project-content">
+            <h2>Overview</h2>
+            <p>
+                While concurrency is a great way to optimize a computer vision pipeline, it is often not a concept
+                that is easy to understand and work with for junior robotics engineers / interns without a strong
+                computer science background. It can also make developing prototypes or benchmarking different
+                algorithms more work than it should be.
+            </p>
+
+            <h2>Impact</h2>
+            <p>This work brought:</p>
+            <ul>
+                <li>
+                    <strong>Improved developer velocity</strong> - Iterating on perception algorithms and integrating
+                    them in our pipeline could be done separately
+                </li>
+                <li>
+                    <strong>QMS compliance</strong> - A way to ensure the software would comply for QMS criteria,
+                    by making it easy to extract intermediate results and compute metrics on large datasets
+                </li>
+                <li>
+                    <strong>Hardware/software decoupling</strong> - Allowing a fast de-risking of alternate sensors
+                </li>
+            </ul>
+
+            <h2>Duration</h2>
+            <p>September 2024 - 1 month</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Paul. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
