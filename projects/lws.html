@@ -11,10 +11,15 @@
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">Paul</a>
             <ul class="nav-links">
-                <li><a href="../index.html#about">About</a></li>
-                <li><a href="../index.html#projects">Projects</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="../index.html#about" data-i18n="nav.about">About</a></li>
+                <li><a href="../index.html#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
+            <div class="lang-switcher">
+                <button data-lang="en">EN</button>
+                <span class="lang-divider">|</span>
+                <button data-lang="fr">FR</button>
+            </div>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -29,14 +34,14 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
-                Back to Projects
+                <span data-i18n="projects.backToHome">Back to Home</span>
             </a>
-            <h1>3D Vision for a Robotised Wheelchair</h1>
+            <h1 data-i18n="projects.lws.title">3D Vision for a Robotised Wheelchair</h1>
             <div class="project-meta">
-                <span class="project-tag">Perception</span>
-                <span class="project-tag">ROS</span>
-                <span class="project-tag">Depth Sensing</span>
-                <span class="project-tag">EPFL Biorob</span>
+                <span class="project-tag" data-i18n="tags.perception">Perception</span>
+                <span class="project-tag" data-i18n="tags.ros">ROS</span>
+                <span class="project-tag" data-i18n="tags.depthSensing">Depth Sensing</span>
+                <span class="project-tag" data-i18n="tags.epflBiorob">EPFL Biorob</span>
             </div>
         </div>
 
@@ -53,14 +58,14 @@
         </div>
 
         <div class="project-content">
-            <h2>Overview</h2>
-            <p>
+            <h2 data-i18n="projects.lws.overview">Overview</h2>
+            <p data-i18n="projects.lws.overviewP1">
                 This project was part a collaboration between EPFL (Biorob laboratory) and C. Cazali, aiming to
                 develop a robotised wheelchair with an hybrid legged-wheeled locomotion and obstacle crossing capabilities.
             </p>
 
-            <h2>Problem Statement</h2>
-            <p>
+            <h2 data-i18n="projects.lws.problem">Problem Statement</h2>
+            <p data-i18n="projects.lws.problemP1">
                 From previous students works, a model was implemented in simulation, with obstacle crossing working
                 in a 2D space (xz), with a ground truth knowledge of the obstacles positions and dimensions.
                 My project aimed to extend this to a 3D navigation scenario, using on-board depth imagery for the
@@ -68,18 +73,16 @@
                 This represented 14 weeks of full time work.
             </p>
 
-            <h2>Approach</h2>
-            <p>
+            <h2 data-i18n="projects.lws.approach">Approach</h2>
+            <p data-i18n="projects.lws.approachP1">
                 After extending the obstacle crossing to handle 3D navigation cases, I reviewed the state of the art
                 for obstacle perception, and highlighted the need for a mapping strategy to aggregate the sensor's
                 measures over time. As this is a well researched topic, I looked at the available open sources
-                implementations, and selected the
-                <a href="https://github.com/ANYbotics/elevation_mapping" target="_blank">elevation mapping approach</a>
+                implementations, and selected the elevation mapping approach
                 developed by ETH Zürich and Anybotics, which was the more adapted to our use case.
             </p>
-            <p>
-                I then interfaced the simulated sensory data with the mapping algorithms using
-                <a href="https://www.ros.org/" target="_blank">ROS</a>, creating a 2.5D map of the environment
+            <p data-i18n="projects.lws.approachP2">
+                I then interfaced the simulated sensory data with the mapping algorithms using ROS, creating a 2.5D map of the environment
                 around the robot from the sensory input.
             </p>
 
@@ -87,10 +90,10 @@
                 <video controls style="max-width: 100%;">
                     <source src="../assets/videos/demo_lws.mp4" type="video/mp4">
                 </video>
-                <figcaption>Demonstration of obstacle crossing using real-time perception</figcaption>
+                <figcaption data-i18n="projects.lws.figDemo">Demonstration of obstacle crossing using real-time perception</figcaption>
             </figure>
 
-            <p>
+            <p data-i18n="projects.lws.approachP3">
                 After that, I solved the challenges inherent to our application, handling self-occlusion, low
                 confidence measures and computing the obstacle representation required by the crossing algorithms
                 while minimizing the time lag. This allowed the robot to clear multiple obstacle crossing scenarios,
@@ -99,24 +102,24 @@
 
             <figure>
                 <img src="../assets/images/lws_stairsrgbd.png" alt="Sensor measure in an outdoor scene">
-                <figcaption>Sensor measure in an outdoor scene</figcaption>
+                <figcaption data-i18n="projects.lws.figSensor">Sensor measure in an outdoor scene</figcaption>
             </figure>
 
-            <h2>Sensor Selection</h2>
-            <p>
+            <h2 data-i18n="projects.lws.sensor">Sensor Selection</h2>
+            <p data-i18n="projects.lws.sensorP1">
                 Next, I chose the physical sensor after reviewing the available depth sensing technologies in regards
                 to outdoor use, driver availability and budget. After the purchase of a 2nd generation refurbished
                 kinect, with depth sensing based on Time-of-Flight technology and a complimentary RGB image, I adapted
-                existing calibration scripts for <a href="https://opencv.org/opencv-4-0/" target="_blank">OpenCV 4</a>.
+                existing calibration scripts for OpenCV 4.
                 I then tested the now calibrated sensor on outdoor scenes, and interfaced it with the rest of the project.
             </p>
-            <p>
+            <p data-i18n="projects.lws.sensorP2">
                 I then experimented with visual and motor odometry, laying the foundations for future work regarding
                 the localisation of the robot.
             </p>
 
-            <h2>Results</h2>
-            <p>
+            <h2 data-i18n="projects.lws.results">Results</h2>
+            <p data-i18n="projects.lws.resultsP1">
                 With this work, I was able to provide a proof of concept on the solutions for obstacle perception
                 with on-board imagery, combining and adapting multiple state of the art approaches to the LWS project.
             </p>
@@ -125,10 +128,11 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Paul. All rights reserved.</p>
+            <p>&copy; <span data-i18n="footer.copyright">2024 Paul. All rights reserved.</span></p>
         </div>
     </footer>
 
+    <script src="../js/i18n.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

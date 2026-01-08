@@ -123,6 +123,40 @@ a:hover {
     transition: var(--transition);
 }
 
+/* Language Switcher */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1.5rem;
+}
+
+.lang-switcher button {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all var(--transition);
+}
+
+.lang-switcher button:hover {
+    color: var(--color-text);
+}
+
+.lang-switcher button.active {
+    color: var(--color-primary);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.lang-divider {
+    color: var(--color-border);
+    font-size: 0.85rem;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -592,6 +626,11 @@ section h2::after {
 
     .nav-toggle {
         display: flex;
+    }
+
+    .lang-switcher {
+        margin-left: auto;
+        margin-right: 1rem;
     }
 
     .project-grid {

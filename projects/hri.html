@@ -11,10 +11,15 @@
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">Paul</a>
             <ul class="nav-links">
-                <li><a href="../index.html#about">About</a></li>
-                <li><a href="../index.html#projects">Projects</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="../index.html#about" data-i18n="nav.about">About</a></li>
+                <li><a href="../index.html#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
+            <div class="lang-switcher">
+                <button data-lang="en">EN</button>
+                <span class="lang-divider">|</span>
+                <button data-lang="fr">FR</button>
+            </div>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -29,17 +34,17 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
-                Back to Projects
+                <span data-i18n="projects.backToHome">Back to Home</span>
             </a>
-            <h1>Human-Robot Interaction</h1>
-            <p style="color: var(--color-text-muted); margin-top: 0.5rem;">
+            <h1 data-i18n="projects.hri.title">Human-Robot Interaction</h1>
+            <p style="color: var(--color-text-muted); margin-top: 0.5rem;" data-i18n="projects.hri.subtitle">
                 Human aware navigation and multi-robot task allocation
             </p>
             <div class="project-meta">
-                <span class="project-tag">HRI</span>
-                <span class="project-tag">Navigation</span>
-                <span class="project-tag">Multi-Robot Systems</span>
-                <span class="project-tag">MOnarCH</span>
+                <span class="project-tag" data-i18n="tags.hri">HRI</span>
+                <span class="project-tag" data-i18n="tags.navigation">Navigation</span>
+                <span class="project-tag" data-i18n="tags.multiRobot">Multi-Robot Systems</span>
+                <span class="project-tag" data-i18n="tags.monarch">MOnarCH</span>
             </div>
         </div>
 
@@ -56,8 +61,8 @@
         </div>
 
         <div class="project-content">
-            <h2>Overview</h2>
-            <p>
+            <h2 data-i18n="projects.hri.overview">Overview</h2>
+            <p data-i18n="projects.hri.overviewP1">
                 The integration of mobile robotic agents in a human populated environment is a long-time goal
                 in social robotics. However, navigating next to human present multiple questions: How should a
                 robot react when a human is blocking its path? Should robots be considered as "second class
@@ -68,8 +73,8 @@
                 <img src="../assets/images/hri_scenario.png" alt="Interaction along with the scenario completion" style="width: 100%;">
             </figure>
 
-            <h2>Project Goals</h2>
-            <p>
+            <h2 data-i18n="projects.hri.goals">Project Goals</h2>
+            <p data-i18n="projects.hri.goalsP1">
                 This project aims to integrate HRI in the task allocation loop for a team of robot performing
                 navigation tasks alongside humans and evaluate the impact of the interaction on the team performance.
                 This performance has been compared to a more conservative approach, where robots would avoid humans,
@@ -78,15 +83,15 @@
 
             <div style="clear: both;"></div>
 
-            <h2>Approach</h2>
-            <p>
+            <h2 data-i18n="projects.hri.approach">Approach</h2>
+            <p data-i18n="projects.hri.approachP1">
                 For that matter, I extended the work done on my semester project, which aimed to integrate HRI
                 to a single robot navigation scenario, by using speech, leds and head gaze on a mbot from the
                 MOnarCH project. In order to be able to evaluate the impact of each human on the robot plan,
                 I used the risk estimation method developed by my supervising assistant (Z. Talebpour), which
                 computes the distance between humans and the trajectory planned by the robot.
             </p>
-            <p>
+            <p data-i18n="projects.hri.approachP2">
                 Then, instead of changing its goal if the risk is rising (a human is getting closer), the robot
                 would interact with the human, by gazing towards him, and asking him to move, thanks to pre-recorded
                 speech samples. The robot will then wait for the human to move during a set amount of time. If the
@@ -94,8 +99,8 @@
                 otherwise it would change its goal.
             </p>
 
-            <h2>Additional Features</h2>
-            <p>
+            <h2 data-i18n="projects.hri.features">Additional Features</h2>
+            <p data-i18n="projects.hri.featuresP1">
                 In addition to this key interaction, I implemented multiple features, such as gaze tracking of
                 a human, detection of social human groups via clustering, to be able to have more meaningful
                 interactions.
@@ -107,17 +112,17 @@
 
             <div style="clear: both;"></div>
 
-            <h2>Results</h2>
-            <p>
+            <h2 data-i18n="projects.hri.results">Results</h2>
+            <p data-i18n="projects.hri.resultsP1">
                 In the end, I was able to evaluate the impact of the interaction, assuming that the humans would
                 respond positively to the robot request. The results obtained are encouraging, and we observe that
                 HRI allows improve the scenario completion time, and reduce the distance travelled by each robot.
             </p>
-            <p>
+            <p data-i18n="projects.hri.resultsP2">
                 Unfortunately, I could not test the impact of the interaction on the human perception of the robot,
                 as the experiments have only been done with subjects internal to the project.
             </p>
-            <p>
+            <p data-i18n="projects.hri.resultsP3">
                 The application of HRI to MRTA looks like a promising way to increase the performance and the social
                 acceptance of robots. Additional work is still needed in order to extend the showcased interaction
                 to more complex scenarios.
@@ -127,10 +132,11 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Paul. All rights reserved.</p>
+            <p>&copy; <span data-i18n="footer.copyright">2024 Paul. All rights reserved.</span></p>
         </div>
     </footer>
 
+    <script src="../js/i18n.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

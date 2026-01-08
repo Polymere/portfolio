@@ -11,10 +11,15 @@
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Paul</a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
+            <div class="lang-switcher">
+                <button data-lang="en">EN</button>
+                <span class="lang-divider">|</span>
+                <button data-lang="fr">FR</button>
+            </div>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -27,23 +32,21 @@
         <section id="hero" class="hero">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Hi, I'm <span class="highlight">Paul</span></h1>
-                    <p class="tagline">Robotics Engineer</p>
-                    <p class="intro">
-                        <!-- PLACEHOLDER: Add your introduction here -->
+                    <h1><span data-i18n="hero.greeting">Hi, I'm</span> <span class="highlight">Paul</span></h1>
+                    <p class="tagline" data-i18n="hero.tagline">Robotics Engineer</p>
+                    <p class="intro" data-i18n="hero.intro">
                         Experienced robotics engineer specializing in computer vision,
                         simulation, and human-robot interaction. Passionate about building
                         systems that bridge the gap between research and real-world applications.
                     </p>
                     <div class="hero-cta">
-                        <a href="assets/cv.pdf" class="btn btn-primary" target="_blank">Download CV</a>
-                        <a href="#projects" class="btn btn-secondary">View Projects</a>
+                        <a href="assets/cv.pdf" class="btn btn-primary" target="_blank" data-i18n="hero.downloadCv">Download CV</a>
+                        <a href="#projects" class="btn btn-secondary" data-i18n="hero.viewProjects">View Projects</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <!-- PLACEHOLDER: Add your profile picture -->
                     <div class="profile-placeholder">
-                        <span>Your Photo</span>
+                        <span data-i18n="hero.photoAlt">Your Photo</span>
                     </div>
                 </div>
             </div>
@@ -51,9 +54,8 @@
 
         <section id="about" class="about">
             <div class="container">
-                <h2>About Me</h2>
-                <p>
-                    <!-- PLACEHOLDER: Add more details about yourself -->
+                <h2 data-i18n="about.title">About Me</h2>
+                <p data-i18n="about.content">
                     With a background in robotics and computer vision, I've worked on projects
                     ranging from simulation environments for visually impaired assistance devices
                     to human-robot interaction systems. My expertise includes ROS, depth sensing,
@@ -64,17 +66,17 @@
 
         <section id="projects" class="projects">
             <div class="container">
-                <h2>Projects</h2>
+                <h2 data-i18n="projects.title">Projects</h2>
                 <div class="project-grid">
                     <a href="projects/real2sim.html" class="project-card">
                         <div class="project-image">
                             <img src="assets/images/webots_example.png" alt="Real2Sim Project">
                         </div>
                         <div class="project-info">
-                            <h3>Real2Sim</h3>
-                            <p>Synthetic data generation pipeline for computer vision algorithms using Webots simulator</p>
-                            <span class="project-tag">Simulation</span>
-                            <span class="project-tag">Computer Vision</span>
+                            <h3 data-i18n="projects.real2sim.title">Real2Sim</h3>
+                            <p data-i18n="projects.real2sim.description">Synthetic data generation pipeline for computer vision algorithms using Webots simulator</p>
+                            <span class="project-tag" data-i18n="tags.simulation">Simulation</span>
+                            <span class="project-tag" data-i18n="tags.computerVision">Computer Vision</span>
                         </div>
                     </a>
 
@@ -83,10 +85,10 @@
                             <img src="assets/images/lws_cover.png" alt="Legged-Wheeled Robot">
                         </div>
                         <div class="project-info">
-                            <h3>3D Vision for Robotised Wheelchair</h3>
-                            <p>Obstacle detection and crossing for a legged-wheeled robot using depth sensing</p>
-                            <span class="project-tag">Perception</span>
-                            <span class="project-tag">ROS</span>
+                            <h3 data-i18n="projects.lws.title">3D Vision for Robotised Wheelchair</h3>
+                            <p data-i18n="projects.lws.description">Obstacle detection and crossing for a legged-wheeled robot using depth sensing</p>
+                            <span class="project-tag" data-i18n="tags.perception">Perception</span>
+                            <span class="project-tag" data-i18n="tags.ros">ROS</span>
                         </div>
                     </a>
 
@@ -95,10 +97,10 @@
                             <img src="assets/images/biorob_cover.jpg" alt="Bio-inspired Locomotion">
                         </div>
                         <div class="project-info">
-                            <h3>Bio-inspired Locomotion Controller</h3>
-                            <p>Sensitivity analysis and optimization of reflex parameters for bipedal locomotion</p>
-                            <span class="project-tag">Optimization</span>
-                            <span class="project-tag">Biomechanics</span>
+                            <h3 data-i18n="projects.geyeropt.title">Bio-inspired Locomotion Controller</h3>
+                            <p data-i18n="projects.geyeropt.description">Sensitivity analysis and optimization of reflex parameters for bipedal locomotion</p>
+                            <span class="project-tag" data-i18n="tags.optimization">Optimization</span>
+                            <span class="project-tag" data-i18n="tags.biomechanics">Biomechanics</span>
                         </div>
                     </a>
 
@@ -107,10 +109,10 @@
                             <img src="assets/images/hri_monarch.png" alt="Human-Robot Interaction">
                         </div>
                         <div class="project-info">
-                            <h3>Human-Robot Interaction</h3>
-                            <p>Human-aware navigation and multi-robot task allocation in social environments</p>
-                            <span class="project-tag">HRI</span>
-                            <span class="project-tag">Navigation</span>
+                            <h3 data-i18n="projects.hri.title">Human-Robot Interaction</h3>
+                            <p data-i18n="projects.hri.description">Human-aware navigation and multi-robot task allocation in social environments</p>
+                            <span class="project-tag" data-i18n="tags.hri">HRI</span>
+                            <span class="project-tag" data-i18n="tags.navigation">Navigation</span>
                         </div>
                     </a>
 
@@ -119,10 +121,10 @@
                             <img src="assets/images/bci_rebound.png" alt="Brain Computer Interface">
                         </div>
                         <div class="project-info">
-                            <h3>Brain Computer Interaction</h3>
-                            <p>Decoding of motor termination in imagined movement using EEG data</p>
-                            <span class="project-tag">BCI</span>
-                            <span class="project-tag">Signal Processing</span>
+                            <h3 data-i18n="projects.bci.title">Brain Computer Interaction</h3>
+                            <p data-i18n="projects.bci.description">Decoding of motor termination in imagined movement using EEG data</p>
+                            <span class="project-tag" data-i18n="tags.bci">BCI</span>
+                            <span class="project-tag" data-i18n="tags.signalProcessing">Signal Processing</span>
                         </div>
                     </a>
 
@@ -131,10 +133,10 @@
                             <span>CADET</span>
                         </div>
                         <div class="project-info">
-                            <h3>Developer Tooling</h3>
-                            <p>Improving developer velocity for computer vision pipeline development</p>
-                            <span class="project-tag">Tooling</span>
-                            <span class="project-tag">CV Pipeline</span>
+                            <h3 data-i18n="projects.cadet.title">Developer Tooling</h3>
+                            <p data-i18n="projects.cadet.description">Improving developer velocity for computer vision pipeline development</p>
+                            <span class="project-tag" data-i18n="tags.tooling">Tooling</span>
+                            <span class="project-tag" data-i18n="tags.cvPipeline">CV Pipeline</span>
                         </div>
                     </a>
                 </div>
@@ -143,28 +145,27 @@
 
         <section id="contact" class="contact">
             <div class="container">
-                <h2>Get in Touch</h2>
-                <p>Interested in working together? Feel free to reach out.</p>
+                <h2 data-i18n="contact.title">Get in Touch</h2>
+                <p data-i18n="contact.subtitle">Interested in working together? Feel free to reach out.</p>
                 <div class="contact-links">
-                    <!-- PLACEHOLDER: Add your contact links -->
                     <a href="mailto:your.email@example.com" class="contact-link">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                             <polyline points="22,6 12,13 2,6"/>
                         </svg>
-                        Email
+                        <span data-i18n="contact.email">Email</span>
                     </a>
                     <a href="https://github.com/yourusername" class="contact-link" target="_blank">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
-                        GitHub
+                        <span data-i18n="contact.github">GitHub</span>
                     </a>
                     <a href="https://linkedin.com/in/yourusername" class="contact-link" target="_blank">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
-                        LinkedIn
+                        <span data-i18n="contact.linkedin">LinkedIn</span>
                     </a>
                 </div>
             </div>
@@ -173,10 +174,11 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Paul. All rights reserved.</p>
+            <p>&copy; <span data-i18n="footer.copyright">2024 Paul. All rights reserved.</span></p>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
