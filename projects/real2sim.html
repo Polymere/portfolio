@@ -47,14 +47,7 @@
 
         <!-- Rerun Viewer Integration -->
         <div class="rerun-container">
-            <div id="rerun-viewer" class="rerun-placeholder">
-                <p>Rerun Viewer Placeholder</p>
-                <code>Replace with your .rrd file URL</code>
-                <p style="margin-top: 1rem; font-size: 0.9rem;">
-                    To embed a recording, call:<br>
-                    <code>loadRerunViewer('rerun-viewer', 'YOUR_RRD_URL')</code>
-                </p>
-            </div>
+            <div id="rerun-viewer" class="rerun-viewer-wrapper"></div>
         </div>
 
         <div class="project-content">
@@ -149,11 +142,10 @@
 
     <script src="../js/i18n.js"></script>
     <script src="../js/main.js"></script>
-    <!--
-    To load a Rerun recording, add this script after the page loads:
     <script>
-        loadRerunViewer('rerun-viewer', 'https://your-url.com/recording.rrd', '0.20.3');
+        document.addEventListener('DOMContentLoaded', function() {
+            loadRerunViewer('rerun-viewer', '../assets/rrd/realtime.rrd', '0.21.0');
+        });
     </script>
-    -->
 </body>
 </html>

@@ -76,8 +76,15 @@ function loadRerunViewer(containerId, rrdUrl, rerunVersion = '0.20.3') {
     const container = document.getElementById(containerId);
     if (!container) return;
 
+    // Convert relative URLs to absolute URLs for the Rerun hosted viewer
+    let absoluteUrl = rrdUrl;
+    if (!rrdUrl.startsWith('http://') && !rrdUrl.startsWith('https://')) {
+        const base = new URL('.', window.location.href);
+        absoluteUrl = new URL(rrdUrl, base).href;
+    }
+
     const iframe = document.createElement('iframe');
-    iframe.src = `https://app.rerun.io/version/${rerunVersion}/index.html?url=${encodeURIComponent(rrdUrl)}`;
+    iframe.src = `https://app.rerun.io/version/${rerunVersion}/?url=${encodeURIComponent(absoluteUrl)}`;
     iframe.className = 'rerun-viewer';
     iframe.allow = 'fullscreen';
     iframe.title = 'Rerun Viewer';

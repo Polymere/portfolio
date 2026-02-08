@@ -7,8 +7,8 @@ A sleek, professional portfolio website for a robotics engineer with support for
 ### Option 1: Python (Recommended)
 
 ```bash
-# Python 3
-python -m http.server 8000
+# With CORS support (required for Rerun viewer)
+python server.py 8000
 
 # Then open http://localhost:8000 in your browser
 ```
@@ -53,9 +53,11 @@ portfolio/
 │   ├── hri.html
 │   ├── bci.html
 │   └── cadet.html
+├── server.py               # Dev server with CORS support
 ├── assets/
 │   ├── images/             # Place your images here
 │   ├── videos/             # Place your videos here
+│   ├── rrd/                # Rerun .rrd recording files
 │   └── cv.pdf              # Your CV file
 └── pages/                  # Original markdown content
 ```
@@ -98,36 +100,36 @@ Update the image/video paths in the HTML files to match.
 
 ## Embedding Rerun Visualizations
 
-Each project page has a placeholder for the Rerun viewer. To embed a recording:
-
-### Method 1: Using the helper function
-
-Add this script at the bottom of your project page:
+Project pages can embed interactive [Rerun](https://rerun.io) viewers to display `.rrd` recordings. Use the `loadRerunViewer` helper defined in `js/main.js`:
 
 ```html
 <script>
-    loadRerunViewer('rerun-viewer', 'https://your-url.com/recording.rrd', '0.20.3');
+    document.addEventListener('DOMContentLoaded', function() {
+        loadRerunViewer('rerun-viewer', '../assets/rrd/recording.rrd', '0.21.0');
+    });
 </script>
 ```
 
-### Method 2: Direct iframe
+Parameters:
+- `containerId` — ID of the DOM element to host the viewer
+- `rrdUrl` — path to the `.rrd` file (relative or absolute)
+- `rerunVersion` (optional) — Rerun SDK version that produced the file (default `'0.20.3'`). Must match the SDK version used to generate the recording.
 
-Replace the placeholder div with:
+Relative paths are automatically resolved to absolute URLs so the hosted viewer at `app.rerun.io` can fetch them.
 
-```html
-<iframe
-    src="https://app.rerun.io/version/0.20.3/index.html?url=YOUR_RRD_URL"
-    class="rerun-viewer"
-    allow="fullscreen"
-    title="Rerun Viewer">
-</iframe>
+### Local development with CORS
+
+The Rerun viewer is served from `app.rerun.io` and needs to fetch `.rrd` files from your local server. This requires CORS headers. Use the included helper server instead of `python -m http.server`:
+
+```bash
+python server.py 8000
 ```
 
 ### Hosting .rrd Files
 
-Your `.rrd` files need to be hosted on a web server that supports CORS. Options:
-- Your own web server
-- GitHub Pages (with the file in your repo)
+In production, your `.rrd` files need to be hosted on a server that supports CORS. Options:
+- Your own web server (with `Access-Control-Allow-Origin` headers)
+- GitHub Pages
 - Cloud storage (S3, GCS, etc.)
 
 ## Browser Compatibility
