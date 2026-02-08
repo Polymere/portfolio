@@ -508,6 +508,15 @@ section h2::after {
     color: var(--color-accent);
 }
 
+.project-hero-image {
+    display: block;
+    max-width: 100%;
+    height: 600px;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
 /* Project Content */
 .project-content {
     max-width: 900px;
@@ -642,7 +651,8 @@ section h2::after {
     }
 
     .rerun-viewer,
-    .rerun-placeholder {
+    .rerun-placeholder,
+    .project-hero-image {
         height: 400px;
     }
 }
