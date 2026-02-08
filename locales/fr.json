@@ -130,29 +130,11 @@
     }
   },
   "tags": {
-    "simulation": "Simulation",
-    "computerVision": "Vision par Ordinateur",
-    "perception": "Perception",
-    "ros": "ROS",
-    "optimization": "Optimisation",
-    "biomechanics": "Biomécanique",
-    "hri": "IHR",
-    "navigation": "Navigation",
-    "bci": "ICO",
-    "signalProcessing": "Traitement du Signal",
-    "tooling": "Outillage",
-    "cvPipeline": "Pipeline CV",
-    "webots": "Webots",
-    "bipedAi": "biped.ai",
-    "depthSensing": "Détection de Profondeur",
-    "epflBiorob": "EPFL Biorob",
-    "nsgaII": "NSGA-II",
-    "multiRobot": "Systèmes Multi-Robots",
-    "monarch": "MOnarCH",
-    "eeg": "EEG",
+    "biped": "biped",
     "epfl": "EPFL",
-    "concurrency": "Concurrence",
-    "workProject": "Projet Professionnel"
+    "workProject": "Projet Professionnel",
+    "studentProject": "Projet Étudiant",
+    "personalProject": "Projet Personnel"
   },
   "contact": {
     "title": "Me Contacter",
