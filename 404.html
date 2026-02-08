@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Paul - Robotics Engineer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 1.5rem 2rem;
+        }
+
+        .error-content {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 2rem;
+        }
+
+        .error-content h1 {
+            font-size: clamp(5rem, 15vw, 10rem);
+            line-height: 1;
+            color: var(--color-border);
+            margin-bottom: 1rem;
+        }
+
+        .error-content p {
+            color: var(--color-text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .gol-wrapper {
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .gol-canvas {
+            display: block;
+            width: 100%;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            cursor: crosshair;
+            background: var(--color-bg-secondary);
+        }
+
+        .gol-controls {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .gol-controls button {
+            padding: 0.5rem 1.25rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            font-family: var(--font-sans);
+            background: transparent;
+            color: var(--color-text-muted);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .gol-controls button:hover {
+            color: var(--color-text);
+            border-color: var(--color-text-muted);
+            background: var(--color-bg-card);
+        }
+
+        .gol-controls button.active {
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .gol-hint {
+            color: var(--color-accent);
+            font-size: 0.8rem;
+            margin-top: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Paul</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+                <li><a href="index.html#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button data-lang="en">EN</button>
+                <span class="lang-divider">|</span>
+                <button data-lang="fr">FR</button>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="error-page">
+        <div class="error-content">
+            <h1>404</h1>
+            <p data-i18n="error.notFound">This page could not be found.</p>
+            <a href="index.html" class="btn btn-primary" data-i18n="error.backHome">Back to Home</a>
+        </div>
+
+        <div class="gol-wrapper">
+            <canvas class="gol-canvas" id="gol-canvas"></canvas>
+            <div class="gol-controls">
+                <button id="gol-play" class="active">Play</button>
+                <button id="gol-step">Step</button>
+                <button id="gol-clear">Clear</button>
+                <button id="gol-random">Random</button>
+            </div>
+            <p class="gol-hint" data-i18n="error.golHint">Click or drag on the grid to draw cells</p>
+        </div>
+    </main>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    (function () {
+        const canvas = document.getElementById('gol-canvas');
+        const ctx = canvas.getContext('2d');
+
+        const CELL_SIZE = 12;
+        const GAP = 1;
+        const STEP = CELL_SIZE + GAP;
+        const INTERVAL = 120;
+
+        let cols, rows, grid, running = true, timer = null;
+
+        function initSize() {
+            const wrapper = canvas.parentElement;
+            const w = wrapper.clientWidth;
+            cols = Math.floor(w / STEP);
+            rows = Math.floor(Math.min(400, window.innerHeight * 0.4) / STEP);
+            canvas.width = cols * STEP - GAP;
+            canvas.height = rows * STEP - GAP;
+        }
+
+        function createGrid(fill) {
+            return Array.from({ length: rows }, () =>
+                Array.from({ length: cols }, () => (fill ? Math.random() < 0.3 : false))
+            );
+        }
+
+        function draw() {
+            const bgColor = getComputedStyle(document.documentElement)
+                .getPropertyValue('--color-bg-secondary').trim() || '#171717';
+            const cellColor = getComputedStyle(document.documentElement)
+                .getPropertyValue('--color-border').trim() || '#2e2e2e';
+            const aliveColor = getComputedStyle(document.documentElement)
+                .getPropertyValue('--color-text-muted').trim() || '#a3a3a3';
+
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < cols; c++) {
+                    ctx.fillStyle = grid[r][c] ? aliveColor : cellColor;
+                    ctx.fillRect(c * STEP, r * STEP, CELL_SIZE, CELL_SIZE);
+                }
+            }
+        }
+
+        function countNeighbors(r, c) {
+            let count = 0;
+            for (let dr = -1; dr <= 1; dr++) {
+                for (let dc = -1; dc <= 1; dc++) {
+                    if (dr === 0 && dc === 0) continue;
+                    const nr = (r + dr + rows) % rows;
+                    const nc = (c + dc + cols) % cols;
+                    if (grid[nr][nc]) count++;
+                }
+            }
+            return count;
+        }
+
+        function step() {
+            const next = Array.from({ length: rows }, () => Array(cols).fill(false));
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < cols; c++) {
+                    const n = countNeighbors(r, c);
+                    next[r][c] = grid[r][c] ? (n === 2 || n === 3) : (n === 3);
+                }
+            }
+            grid = next;
+            draw();
+        }
+
+        function start() {
+            if (timer) return;
+            timer = setInterval(step, INTERVAL);
+            running = true;
+            document.getElementById('gol-play').classList.add('active');
+        }
+
+        function stop() {
+            clearInterval(timer);
+            timer = null;
+            running = false;
+            document.getElementById('gol-play').classList.remove('active');
+        }
+
+        // Mouse / touch drawing
+        let drawing = false;
+        function cellAt(e) {
+            const rect = canvas.getBoundingClientRect();
+            const sx = canvas.width / rect.width;
+            const sy = canvas.height / rect.height;
+            const x = (e.clientX - rect.left) * sx;
+            const y = (e.clientY - rect.top) * sy;
+            return { c: Math.floor(x / STEP), r: Math.floor(y / STEP) };
+        }
+
+        function toggleCell(e) {
+            const { r, c } = cellAt(e);
+            if (r >= 0 && r < rows && c >= 0 && c < cols) {
+                grid[r][c] = true;
+                draw();
+            }
+        }
+
+        canvas.addEventListener('mousedown', (e) => { drawing = true; toggleCell(e); });
+        canvas.addEventListener('mousemove', (e) => { if (drawing) toggleCell(e); });
+        window.addEventListener('mouseup', () => { drawing = false; });
+
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault(); drawing = true; toggleCell(e.touches[0]);
+        }, { passive: false });
+        canvas.addEventListener('touchmove', (e) => {
+            e.preventDefault(); if (drawing) toggleCell(e.touches[0]);
+        }, { passive: false });
+        canvas.addEventListener('touchend', () => { drawing = false; });
+
+        // Controls
+        document.getElementById('gol-play').addEventListener('click', () => {
+            running ? stop() : start();
+        });
+        document.getElementById('gol-step').addEventListener('click', () => {
+            stop(); step();
+        });
+        document.getElementById('gol-clear').addEventListener('click', () => {
+            stop(); grid = createGrid(false); draw();
+        });
+        document.getElementById('gol-random').addEventListener('click', () => {
+            grid = createGrid(true); draw();
+            if (!running) start();
+        });
+
+        // Init
+        initSize();
+        grid = createGrid(true);
+        draw();
+        start();
+
+        window.addEventListener('resize', () => {
+            const oldGrid = grid;
+            initSize();
+            grid = createGrid(false);
+            for (let r = 0; r < Math.min(oldGrid.length, rows); r++) {
+                for (let c = 0; c < Math.min(oldGrid[0].length, cols); c++) {
+                    grid[r][c] = oldGrid[r][c];
+                }
+            }
+            draw();
+        });
+    })();
+    </script>
+</body>
+</html>

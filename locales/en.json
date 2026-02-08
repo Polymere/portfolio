@@ -143,6 +143,11 @@
     "github": "GitHub",
     "linkedin": "LinkedIn"
   },
+  "error": {
+    "notFound": "This page could not be found.",
+    "backHome": "Back to Home",
+    "golHint": "Click or drag on the grid to draw cells"
+  },
   "footer": {
     "copyright": "2024 Paul. All rights reserved."
   }

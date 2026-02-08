@@ -143,6 +143,11 @@
     "github": "GitHub",
     "linkedin": "LinkedIn"
   },
+  "error": {
+    "notFound": "Cette page est introuvable.",
+    "backHome": "Retour à l'accueil",
+    "golHint": "Cliquez ou glissez sur la grille pour dessiner des cellules"
+  },
   "footer": {
     "copyright": "2024 Paul. Tous droits réservés."
   }
