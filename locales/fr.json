@@ -207,6 +207,19 @@
     "studentProject": "Projet Étudiant",
     "personalProject": "Projet Personnel"
   },
+  "publications": {
+    "title": "Publications",
+    "pub1": {
+      "title": "Estimation Probabiliste du Risque de Collision pour la Navigation Piétonne",
+      "authors": "A. Tourki, P. Prevel, N. Einecke, T. Puphal, A. Alahi",
+      "venue": "arXiv, 2025"
+    },
+    "pub2": {
+      "title": "Étude de Modèles de Segmentation Sémantique pour l'Assistance aux Personnes Malvoyantes",
+      "authors": "M. Villamizar, O. Canevet, J.-M. Odobez",
+      "venue": "ECCV Workshops, 2024"
+    }
+  },
   "contact": {
     "title": "Me Contacter",
     "subtitle": "Intéressé par une collaboration ? N'hésitez pas à me contacter.",

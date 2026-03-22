@@ -207,6 +207,19 @@
     "studentProject": "Student Project",
     "personalProject": "Personal Project"
   },
+  "publications": {
+    "title": "Publications",
+    "pub1": {
+      "title": "Probabilistic Collision Risk Estimation for Pedestrian Navigation",
+      "authors": "A. Tourki, P. Prevel, N. Einecke, T. Puphal, A. Alahi",
+      "venue": "arXiv, 2025"
+    },
+    "pub2": {
+      "title": "Investigating Semantic Segmentation Models to Assist Visually Impaired People",
+      "authors": "M. Villamizar, O. Canevet, J.-M. Odobez",
+      "venue": "ECCV Workshops, 2024"
+    }
+  },
   "contact": {
     "title": "Get in Touch",
     "subtitle": "Interested in working together? Feel free to reach out.",
