@@ -13,6 +13,7 @@
             <a href="index.html" class="nav-logo">Paul</a>
             <ul class="nav-links">
                 <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
                 <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
@@ -63,10 +64,99 @@
             </div>
         </section>
 
-        <section id="projects" class="projects">
+        <section id="experience" class="experience">
             <div class="container">
-                <h2 data-i18n="projects.title">Projects</h2>
-                <div class="project-grid">
+                <div class="experience-layout">
+                    <div class="experience-left" id="timeline">
+                        <h2 data-i18n="experience.title">Experience</h2>
+                        <p class="experience-intro" data-i18n="experience.intro">
+                            From robotics studies at EPFL to 3.5 years building an assistive navigation platform for blind and visually impaired users at Biped.
+                        </p>
+                        <div class="timeline-strip">
+                            <div class="timeline-group">
+                                <div class="timeline-group-label" data-i18n="experience.groupEpfl">EPFL</div>
+                                <div class="timeline-node">
+                                    <div class="timeline-dot"></div>
+                                    <div>
+                                        <div class="timeline-date">2015 - 2021</div>
+                                        <div class="timeline-label" data-i18n="experience.t0Label">EPFL</div>
+                                        <div class="timeline-desc" data-i18n="experience.t0Desc">BSc + MSc in Robotics. Bio-inspired locomotion, human-robot interaction, brain-computer interfaces, 3D vision</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-group">
+                                <div class="timeline-group-label" data-i18n="experience.groupBiped">Biped</div>
+                                <div class="timeline-node">
+                                    <div class="timeline-dot"></div>
+                                    <div>
+                                        <div class="timeline-date">2021</div>
+                                        <div class="timeline-label" data-i18n="experience.t05Label">Foundation</div>
+                                        <div class="timeline-desc" data-i18n="experience.t05Desc">Multiprocessing architecture, YOLOv5 obstacle detection, 3D audio feedback, benchmarking system</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-node">
+                                    <div class="timeline-dot"></div>
+                                    <div>
+                                        <div class="timeline-date">2022</div>
+                                        <div class="timeline-label" data-i18n="experience.t1Label">Pre-production</div>
+                                        <div class="timeline-desc" data-i18n="experience.t1Desc">Debian packaging, first device deployment, camera calibration tooling</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-node">
+                                    <div class="timeline-dot"></div>
+                                    <div>
+                                        <div class="timeline-date">2023</div>
+                                        <div class="timeline-label" data-i18n="experience.t2Label">3D Perception + Launch</div>
+                                        <div class="timeline-desc" data-i18n="experience.t2Desc">Kalman tracking, hole detection, multi-platform support (Edge 2, VIM3). First user deployments</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-node">
+                                    <div class="timeline-dot"></div>
+                                    <div>
+                                        <div class="timeline-date">2024 Q1</div>
+                                        <div class="timeline-label" data-i18n="experience.t3Label">AI Scene Description</div>
+                                        <div class="timeline-desc" data-i18n="experience.t3Desc">OpenAI-powered environment descriptions with text-to-speech</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-node">
+                                    <div class="timeline-dot"></div>
+                                    <div>
+                                        <div class="timeline-date">2024 Q3</div>
+                                        <div class="timeline-label" data-i18n="experience.t4Label">NOA Device</div>
+                                        <div class="timeline-desc" data-i18n="experience.t4Desc">New hardware platform with button-driven AI menu system</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-node">
+                                    <div class="timeline-dot"></div>
+                                    <div>
+                                        <div class="timeline-date">2025</div>
+                                        <div class="timeline-label" data-i18n="experience.t5Label">Video Description + Navigation</div>
+                                        <div class="timeline-desc" data-i18n="experience.t5Desc">Real-time video analysis, 12+ languages, structured AI output, rich navigation</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-cta">
+                            <a href="projects/biped.html" class="btn btn-secondary" data-i18n="experience.cta">View Full Timeline</a>
+                        </div>
+                    </div>
+
+                    <div class="experience-right" id="projects">
+                        <h2 data-i18n="projects.title">Projects</h2>
+                        <div class="project-grid">
+                    <a href="projects/biped.html" class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/devices_1760717317499-BefpVCs4.jpg" alt="Biped NOA devices">
+                        </div>
+                        <div class="project-info">
+                            <h3 data-i18n="projects.biped.cardTitle">Biped Copilot</h3>
+                            <p data-i18n="projects.biped.cardDesc">Wearable assistive navigation platform for blind users with real-time 3D perception and AI scene descriptions</p>
+                            <span class="project-tag" data-i18n="tags.biped">biped</span>
+                            <span class="project-tag" data-i18n="tags.workProject">Work Project</span>
+                        </div>
+                    </a>
+
                     <a href="projects/real2sim.html" class="project-card">
                         <div class="project-image">
                             <img src="assets/images/webots_example.png" alt="Real2Sim Project">
@@ -126,6 +216,8 @@
                             <span class="project-tag" data-i18n="tags.studentProject">Student Project</span>
                         </div>
                     </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

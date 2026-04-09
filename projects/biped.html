@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biped | Paul - Robotics Engineer</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Paul</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" data-i18n="nav.about">About</a></li>
+                <li><a href="../index.html#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button data-lang="en">EN</button>
+                <span class="lang-divider">|</span>
+                <button data-lang="fr">FR</button>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <div class="project-header">
+            <a href="../index.html#projects" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                <span data-i18n="projects.backToHome">Back to Home</span>
+            </a>
+            <h1 data-i18n="projects.biped.title">Biped Copilot</h1>
+            <p style="color: var(--color-text-muted); margin-top: 0.5rem;" data-i18n="projects.biped.subtitle">
+                Assistive navigation for blind and visually impaired users
+            </p>
+            <div class="project-meta">
+                <span class="project-tag" data-i18n="tags.biped">biped</span>
+                <span class="project-tag" data-i18n="tags.workProject">Work Project</span>
+            </div>
+        </div>
+
+        <img src="../assets/images/devices_1760717317499-BefpVCs4.jpg" alt="Biped NOA devices" class="project-hero-image">
+
+        <div class="project-content">
+            <h2 data-i18n="projects.biped.overview">Overview</h2>
+            <p data-i18n="projects.biped.overviewP1">
+                Biped Copilot is a wearable robotics platform that enables blind and visually impaired users
+                to navigate independently. Using stereo depth cameras worn on the chest, it provides real-time
+                obstacle detection, ground analysis, and spatial audio feedback through bone conduction headphones.
+            </p>
+            <p data-i18n="projects.biped.overviewP2">
+                Over 3.5 years as a core engineer, I contributed across the full stack: from low-level camera
+                drivers and point cloud processing to AI-powered scene descriptions and multi-language support,
+                shipping 45+ releases across 3 hardware platforms to users in 12+ languages.
+            </p>
+        </div>
+
+        <div class="project-stats">
+            <div class="stat-card">
+                <span class="stat-value">45+</span>
+                <span class="stat-label" data-i18n="projects.biped.statReleases">Releases shipped</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">3</span>
+                <span class="stat-label" data-i18n="projects.biped.statPlatforms">Hardware platforms</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">12+</span>
+                <span class="stat-label" data-i18n="projects.biped.statLanguages">Languages supported</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">3.5y</span>
+                <span class="stat-label" data-i18n="projects.biped.statDuration">Duration</span>
+            </div>
+        </div>
+
+        <div class="project-content">
+            <h2 data-i18n="projects.biped.timelineTitle">Development Timeline</h2>
+        </div>
+
+        <div class="project-timeline">
+            <!-- Pre-1.0 -->
+            <div class="timeline-era">
+                <div class="era-header">
+                    <span class="era-period">2021</span>
+                    <span class="era-title" data-i18n="projects.biped.era0Title">Foundation</span>
+                </div>
+                <ul class="era-features">
+                    <li data-i18n="projects.biped.era0F1">Multiprocessing architecture with shared memory and inter-process communication</li>
+                    <li data-i18n="projects.biped.era0F2">Obstacle detection with YOLOv5, ground plane detection, SORT tracker</li>
+                    <li data-i18n="projects.biped.era0F3">3D spatialized audio feedback with priority management</li>
+                    <li data-i18n="projects.biped.era0F4">BLE communication with companion mobile app</li>
+                </ul>
+            </div>
+
+            <!-- 1.0.x -->
+            <div class="timeline-era">
+                <div class="era-header">
+                    <span class="era-period">Nov 2022 - Mar 2023</span>
+                    <span class="era-title" data-i18n="projects.biped.era1Title">Pre-production</span>
+                </div>
+                <ul class="era-features">
+                    <li data-i18n="projects.biped.era1F1" data-i18n-html><strong>Debian packaging</strong> and production service deployment</li>
+                    <li data-i18n="projects.biped.era1F2">Rerun 3D visualizer integration for real-time debugging</li>
+                    <li data-i18n="projects.biped.era1F3">Remote diagnostics upload, camera calibration and assignment scripts</li>
+                    <li data-i18n="projects.biped.era1F4">Multi-language audio assets (French, German)</li>
+                </ul>
+            </div>
+
+            <!-- 1.1-1.2 -->
+            <div class="timeline-era">
+                <div class="era-header">
+                    <span class="era-period">Mar - Jun 2023</span>
+                    <span class="era-title" data-i18n="projects.biped.era2Title">Edge 2 + Navigation</span>
+                </div>
+                <ul class="era-features">
+                    <li data-i18n="projects.biped.era2F1" data-i18n-html><strong>Edge 2 hardware</strong> support with obstacle tracking and risk model</li>
+                    <li data-i18n="projects.biped.era2F2">Image polling/processing pipeline split for performance</li>
+                    <li data-i18n="projects.biped.era2F3">Hemispatial neglect priority, navigation commands, guide dog rule</li>
+                    <li data-i18n="projects.biped.era2F4">Point cloud stabilization and 3D world-to-camera projection</li>
+                </ul>
+            </div>
+
+            <!-- 1.3-1.5 -->
+            <div class="timeline-era">
+                <div class="era-header">
+                    <span class="era-period">Jun - Nov 2023</span>
+                    <span class="era-title" data-i18n="projects.biped.era3Title">3D Perception</span>
+                </div>
+                <ul class="era-features">
+                    <li data-i18n="projects.biped.era3F1" data-i18n-html><strong>3D Kalman tracking</strong> with speed estimation</li>
+                    <li data-i18n="projects.biped.era3F2" data-i18n-html><strong>Hole detection</strong> using KD-tree ground analysis</li>
+                    <li data-i18n="projects.biped.era3F3">Small obstacle detection with Cython optimization</li>
+                    <li data-i18n="projects.biped.era3F4">VIM3 hardware platform support, copilot as installable package</li>
+                </ul>
+            </div>
+
+            <!-- 1.6-1.7 -->
+            <div class="timeline-era">
+                <div class="era-header">
+                    <span class="era-period">Dec 2023 - Feb 2024</span>
+                    <span class="era-title" data-i18n="projects.biped.era4Title">GPS + Risk Model</span>
+                </div>
+                <ul class="era-features">
+                    <li data-i18n="projects.biped.era4F1" data-i18n-html><strong>GPS integration</strong> for outdoor positioning</li>
+                    <li data-i18n="projects.biped.era4F2">Risk model with multi-Gaussian collision probability</li>
+                    <li data-i18n="projects.biped.era4F3">Hand and occlusion detection, motion-adaptive detection range</li>
+                    <li data-i18n="projects.biped.era4F4">Elliptical corridor rework for obstacle proximity</li>
+                </ul>
+            </div>
+
+            <!-- 1.8 -->
+            <div class="timeline-era">
+                <div class="era-header">
+                    <span class="era-period">Mar - Apr 2024</span>
+                    <span class="era-title" data-i18n="projects.biped.era5Title">AI Scene Description</span>
+                </div>
+                <ul class="era-features">
+                    <li data-i18n="projects.biped.era5F1" data-i18n-html><strong>OpenAI-powered scene descriptions</strong> triggered by button press</li>
+                    <li data-i18n="projects.biped.era5F2">Text-to-speech generation with audio streaming</li>
+                    <li data-i18n="projects.biped.era5F3">App state machine, prompts managed server-side</li>
+                    <li data-i18n="projects.biped.era5F4">Developer tooling: monorepo merge, benchmarking integration</li>
+                </ul>
+            </div>
+
+            <!-- 1.9 -->
+            <div class="timeline-era">
+                <div class="era-header">
+                    <span class="era-period">May - Nov 2024</span>
+                    <span class="era-title" data-i18n="projects.biped.era6Title">NOA Device</span>
+                </div>
+                <ul class="era-features">
+                    <li data-i18n="projects.biped.era6F1" data-i18n-html><strong>NOA hardware platform</strong>: button strip, menu system, AI detection classes</li>
+                    <li data-i18n="projects.biped.era6F2">Sentry error tracking, JWT authentication, Docker builds</li>
+                    <li data-i18n="projects.biped.era6F3">End-to-end testing framework, Webots simulator integration</li>
+                    <li data-i18n="projects.biped.era6F4">Obstacle audio sharpness, Gemini-generated assets</li>
+                </ul>
+            </div>
+
+            <!-- 1.10 -->
+            <div class="timeline-era">
+                <div class="era-header">
+                    <span class="era-period">Dec 2024 - Jan 2025</span>
+                    <span class="era-title" data-i18n="projects.biped.era7Title">Multi-language</span>
+                </div>
+                <ul class="era-features">
+                    <li data-i18n="projects.biped.era7F1" data-i18n-html><strong>12+ language support</strong> with online TTS and auto-translate</li>
+                    <li data-i18n="projects.biped.era7F2">Local occupancy grid for spatial mapping</li>
+                    <li data-i18n="projects.biped.era7F3">BLE and audio system rework</li>
+                    <li data-i18n="projects.biped.era7F4">Token-to-audio streaming, JPEG compression for AI requests</li>
+                </ul>
+            </div>
+
+            <!-- 1.11-1.12 -->
+            <div class="timeline-era">
+                <div class="era-header">
+                    <span class="era-period">Feb - Jun 2025</span>
+                    <span class="era-title" data-i18n="projects.biped.era8Title">Video Description + Navigation</span>
+                </div>
+                <ul class="era-features">
+                    <li data-i18n="projects.biped.era8F1" data-i18n-html><strong>Real-time video description</strong> with route following</li>
+                    <li data-i18n="projects.biped.era8F2">Structured AI output with file caching</li>
+                    <li data-i18n="projects.biped.era8F3">Rich navigation instructions, favorite destinations, GPX recording</li>
+                    <li data-i18n="projects.biped.era8F4">Person finding, obstacle scanning, concurrent scene/video descriptions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-content">
+            <h2 data-i18n="projects.biped.techTitle">Technical Scope</h2>
+            <p data-i18n="projects.biped.techP1">
+                The system runs a Python multiprocessing architecture on embedded ARM boards (Khadas Edge 2, VIM3),
+                managing concurrent tasks for image acquisition, obstacle detection, feedback generation,
+                BLE communication, localization, and AI descriptions.
+            </p>
+            <ul>
+                <li data-i18n="projects.biped.tech1" data-i18n-html><strong>Perception:</strong> stereo depth processing, point clouds, ground plane estimation, Kalman tracking, hole detection</li>
+                <li data-i18n="projects.biped.tech2" data-i18n-html><strong>Audio:</strong> 3D spatialized feedback, priority management, obstacle sharpness, TTS integration</li>
+                <li data-i18n="projects.biped.tech3" data-i18n-html><strong>AI/Cloud:</strong> OpenAI and Gemini scene descriptions, video analysis, structured output, server-side prompt engineering</li>
+                <li data-i18n="projects.biped.tech4" data-i18n-html><strong>Infrastructure:</strong> Debian packaging, Docker, Sentry, GCloud, CI/CD with GitHub Actions</li>
+                <li data-i18n="projects.biped.tech5" data-i18n-html><strong>Libraries:</strong> biped_ble (BLE comms), biped_language (i18n), biped_data (cloud sync), benchmarking tools</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span data-i18n="footer.copyright">2024 Paul. All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <script src="../js/i18n.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
