@@ -10,6 +10,7 @@
     "tagline": "Robotics Engineer",
     "intro": "Experienced robotics engineer specializing in computer vision, simulation, and human-robot interaction. Passionate about building systems that bridge the gap between research and real-world applications.",
     "downloadCv": "Download CV",
+    "downloadCvFile": "assets/paul_prevel_cv_en.pdf",
     "viewProjects": "View Projects",
     "photoAlt": "Your Photo"
   },
@@ -235,5 +236,8 @@
   },
   "footer": {
     "copyright": "2026 Paul. All rights reserved."
+  },
+  "gate": {
+    "privatePage": "This page is private. Unlock the site to read it."
   }
 }

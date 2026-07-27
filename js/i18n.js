@@ -76,6 +76,12 @@ const I18n = {
             const key = el.getAttribute('data-i18n-title');
             el.title = this.get(key);
         });
+
+        // Handle href attributes (e.g. language-specific file downloads)
+        document.querySelectorAll('[data-i18n-href]').forEach(el => {
+            const key = el.getAttribute('data-i18n-href');
+            el.href = this.get(key);
+        });
     },
 
     /**

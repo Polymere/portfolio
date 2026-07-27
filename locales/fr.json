@@ -10,6 +10,7 @@
     "tagline": "Ingénieur en Robotique",
     "intro": "Ingénieur en robotique spécialisé en vision par ordinateur, simulation et interaction homme-robot. Passionné par la création de systèmes qui font le lien entre la recherche et les applications concrètes.",
     "downloadCv": "Télécharger CV",
+    "downloadCvFile": "assets/paul_prevel_cv_fr.pdf",
     "viewProjects": "Voir les Projets",
     "photoAlt": "Votre Photo"
   },
@@ -235,5 +236,8 @@
   },
   "footer": {
     "copyright": "2026 Paul. Tous droits réservés."
+  },
+  "gate": {
+    "privatePage": "Cette page est privée. Déverrouillez le site pour la consulter."
   }
 }

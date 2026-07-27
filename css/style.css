@@ -914,6 +914,85 @@ section h2::after {
     font-style: italic;
 }
 
+.project-content h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-content strong {
+    color: var(--color-text);
+}
+
+.project-content code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.1em 0.4em;
+}
+
+/* Long-form writing */
+.post-lede {
+    font-size: 1.15rem;
+    font-style: italic;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 2rem;
+}
+
+.post-takeaway {
+    border-left: 2px solid var(--color-border);
+    padding: 0.25rem 0 0.25rem 1.25rem;
+}
+
+.figure-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    margin: 2rem 0;
+}
+
+.figure-pair figure {
+    margin: 0;
+}
+
+.figure-pair img {
+    margin: 0 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .figure-pair {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tables */
+.table-wrapper {
+    overflow-x: auto;
+    margin: 2rem 0;
+}
+
+.project-content table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--color-text-muted);
+}
+
+.project-content th,
+.project-content td {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.project-content th {
+    color: var(--color-text);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
 /* Responsive Design */
 @media (max-width: 968px) {
     .hero-content {
@@ -1035,3 +1114,130 @@ section h2::after {
         justify-content: center;
     }
 }
+
+/* Password-gated content (see js/gate.js). Hidden until unlocked, and stays
+   hidden if JavaScript is disabled — fail closed. When opened, the block gets
+   no display override so it uses its natural layout. */
+.gated:not(.gated-open) {
+    display: none !important;
+}
+/* A gated block that lists extra pages inside the projects grid: once open, the
+   wrapper itself generates no box so its <a class="project-card"> children become
+   grid items and flow in alongside the public cards. */
+.project-grid > .gated.gated-open {
+    display: contents;
+}
+/* A whole gated project page (see projects/observability.html): the private body
+   is one gated block holding its own project-header + project-content. Once open,
+   the wrapper generates no box so those flow as if the block weren't there. */
+.project-page > .gated.gated-open {
+    display: contents;
+}
+
+/* "This page is private" notice shown on a locked gated page; hidden once the
+   page's gated block opens. */
+.gate-notice {
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+.project-page:has(.gated.gated-open) .gate-notice {
+    display: none;
+}
+
+/* Navbar lock control (injected by js/gate.js) */
+.gate-control {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 0.75rem;
+}
+.gate-lock-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: color var(--transition);
+}
+.gate-lock-btn:hover {
+    color: var(--color-text);
+}
+.gate-control.is-unlocked .gate-lock-btn {
+    color: var(--color-primary);
+}
+.gate-popover {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    padding: 0.75rem;
+    z-index: 1100;
+    min-width: 240px;
+}
+.gate-form {
+    display: flex;
+    gap: 0.5rem;
+}
+.gate-input {
+    flex: 1;
+    min-width: 0;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.4rem 0.6rem;
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+}
+.gate-input:focus {
+    outline: none;
+    border-color: var(--color-text-muted);
+}
+.gate-submit,
+.gate-relock {
+    background: var(--color-primary);
+    color: var(--color-bg);
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background var(--transition);
+}
+.gate-submit:hover,
+.gate-relock:hover {
+    background: var(--color-primary-hover);
+}
+.gate-relock {
+    width: 100%;
+    margin-top: 0.5rem;
+    background: none;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+}
+.gate-relock:hover {
+    background: var(--color-bg-secondary);
+    color: var(--color-text);
+}
+.gate-msg {
+    margin: 0;
+    font-size: 0.8rem;
+}
+.gate-msg.gate-error {
+    color: #f87171;
+    margin-top: 0.5rem;
+}
+.gate-msg.gate-ok {
+    color: var(--color-text-muted);
+}
+

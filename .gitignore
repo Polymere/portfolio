@@ -1,0 +1,7 @@
+# Plaintext sources and generated blocks for gated content (see CLAUDE.md).
+# Only the ciphertext pasted into committed pages should ever be tracked.
+private-src/
+private-out/
+
+# Local Claude Code settings (keep per-machine, don't commit)
+.claude/settings.local.json

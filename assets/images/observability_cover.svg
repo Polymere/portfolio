@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Three stacked observability layers: assembly, fleet, runtime">
+    <rect width="400" height="300" fill="#171717"/>
+    <g font-family="'JetBrains Mono','Fira Code',monospace" font-size="13" letter-spacing="1.5">
+        <g>
+            <rect x="60" y="52" width="280" height="52" rx="6" fill="#1f1f1f" stroke="#2e2e2e"/>
+            <circle cx="84" cy="78" r="4" fill="#fafafa"/>
+            <text x="102" y="83" fill="#fafafa">ASSEMBLY</text>
+        </g>
+        <g>
+            <rect x="60" y="124" width="280" height="52" rx="6" fill="#1f1f1f" stroke="#2e2e2e"/>
+            <circle cx="84" cy="150" r="4" fill="#a3a3a3"/>
+            <text x="102" y="155" fill="#a3a3a3">FLEET</text>
+        </g>
+        <g>
+            <rect x="60" y="196" width="280" height="52" rx="6" fill="#1f1f1f" stroke="#2e2e2e"/>
+            <circle cx="84" cy="222" r="4" fill="#737373"/>
+            <text x="102" y="227" fill="#737373">RUNTIME</text>
+        </g>
+    </g>
+    <g stroke="#2e2e2e" stroke-width="1" stroke-dasharray="3 4">
+        <line x1="200" y1="104" x2="200" y2="124"/>
+        <line x1="200" y1="176" x2="200" y2="196"/>
+    </g>
+</svg>
