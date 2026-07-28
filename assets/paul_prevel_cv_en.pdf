@@ -236,17 +236,17 @@ stream
    </dc:language>
    <dc:date>
     <rdf:Seq>
-     <rdf:li>2026-07-23T15:52:27+02:00</rdf:li>
+     <rdf:li>2026-07-27T18:34:39+02:00</rdf:li>
     </rdf:Seq>
    </dc:date>
    <dc:format>application/pdf</dc:format>
    <dc:source>resume_en.tex</dc:source>
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool>
-   <xmp:CreateDate>2026-07-23T15:52:27+02:00</xmp:CreateDate>
-   <xmp:ModifyDate>2026-07-23T15:52:27+02:00</xmp:ModifyDate>
-   <xmp:MetadataDate>2026-07-23T15:52:27+02:00</xmp:MetadataDate>
+   <xmp:CreateDate>2026-07-27T18:34:39+02:00</xmp:CreateDate>
+   <xmp:ModifyDate>2026-07-27T18:34:39+02:00</xmp:ModifyDate>
+   <xmp:MetadataDate>2026-07-27T18:34:39+02:00</xmp:MetadataDate>
    <xmpMM:DocumentID>uuid:81bed8e8-74af-4037-801b-d181afebaf01</xmpMM:DocumentID>
-   <xmpMM:InstanceID>uuid:21e68542-acff-4c84-8cf8-ede9c04387c4</xmpMM:InstanceID>
+   <xmpMM:InstanceID>uuid:0dd48d0e-29a7-4346-823e-c8f12378a05d</xmpMM:InstanceID>
    <prism:complianceProfile>three</prism:complianceProfile>
    <prism:pageCount>1</prism:pageCount>
   </rdf:Description>
@@ -1751,7 +1751,7 @@ endobj
 endobj
 84 0 obj
 <<
-/Producer (pdftex-1.40.29)/Creator <FEFF004C006100540065005800200077006900740068002000680079007000650072007200650066>/Title <FEFF005000610075006C002000500072006500760065006C0020002D00200043007500720072006900630075006C0075006D002000560069007400610065>/Author <FEFF005000610075006C002000500072006500760065006C>/CreationDate (D:20260723155227+02'00')/ModDate (D:20260723155227+02'00')
+/Producer (pdftex-1.40.29)/Creator <FEFF004C006100540065005800200077006900740068002000680079007000650072007200650066>/Title <FEFF005000610075006C002000500072006500760065006C0020002D00200043007500720072006900630075006C0075006D002000560069007400610065>/Author <FEFF005000610075006C002000500072006500760065006C>/CreationDate (D:20260727183439+02'00')/ModDate (D:20260727183439+02'00')
 /Trapped /False
 >>
 endobj
@@ -1846,7 +1846,7 @@ trailer
 << /Size 85
 /Root 83 0 R
 /Info 84 0 R
-/ID [<8C79DF05F3B78A40087717DDFD087B02> <8C79DF05F3B78A40087717DDFD087B02>] >>
+/ID [<934FDB130AD44F38BBB61DE885B70F53> <934FDB130AD44F38BBB61DE885B70F53>] >>
 startxref
 228760
 %%EOF
